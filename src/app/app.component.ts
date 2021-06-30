@@ -72,8 +72,10 @@ export class AppComponent {
   }
 
   load(){
-    const data  = localStorage.getItem('todos')!;
-    this.todos = JSON.parse(data);    
+    const data  = localStorage.getItem('todos');
+    if(data!=null){
+      this.todos = JSON.parse(data);    
+    }
   }
 
   changeMode(mode:string){
